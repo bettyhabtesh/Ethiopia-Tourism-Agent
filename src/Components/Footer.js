@@ -7,15 +7,16 @@ const Footer = () => {
     <footer className="bg-[#867F76] text-white py-10">
       <div className="container mx-auto px-6">
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-8">
+        <div className="grid grid-cols-1 gap-y-8 md:grid-cols-4 md:gap-x-16">
+          
           {/* Column 1: Brand Info */}
-          <div className="col-span-2 flex items-start">
-            {/* Image Placeholder for Logo */}
-            <img src={Logo} alt="ETA Logo" className="w-48 h-30 mr-8" />
+          <div className="col-span-2 flex flex-col sm:flex-row items-start">
+            <img src={Logo} alt="ETA Logo" className="w-32 h-auto sm:w-48 sm:h-auto mb-4 sm:mb-0 sm:mr-8" />
             <div>
-              <h2 className="text-2xl font-bold text-customBrown mb-4">Ethiopian Tourism Agent</h2>
-              <p className="text-xl text-white">
-                Our Addis Ababa office, conveniently located in the Mexico Area, is open Monday to Saturday. <br />
+              <h2 className="text-xl sm:text-2xl font-bold text-customBrown mb-4">Ethiopian Tourism Agent</h2>
+              <p className="text-lg sm:text-xl text-white">
+                Our Addis Ababa office, conveniently located in the Mexico Area, 
+                is open Monday to Saturday. <br />
                 Need assistance? Our agents are available 24/7 to handle urgent requests and emergencies.
               </p>
             </div>
@@ -23,8 +24,8 @@ const Footer = () => {
 
           {/* Column 2: Contents */}
           <div className="col-span-1">
-            <h3 className="text-2xl font-semibold text-white mb-4">Contents</h3>
-            <ul className="space-y-2 text-xl">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Contents</h3>
+            <ul className="space-y-2 text-lg sm:text-xl">
               <li><a href="#" className="hover:underline">About Us</a></li>
               <li><a href="#" className="hover:underline">About Ethiopia</a></li>
               <li><a href="#" className="hover:underline">Gallery</a></li>
@@ -32,10 +33,9 @@ const Footer = () => {
             </ul>
           </div>
 
-
-          {/* Column 4: Social Media */}
+          {/* Column 3: Social Media */}
           <div className="col-span-1">
-            <h3 className="text-2xl font-semibold text-white mb-4">Social Media</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Social Media</h3>
             <div className="flex space-x-4">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-600">
                 <FaInstagram size={24} />
@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="border-t border-white mt-8"></div>
 
         {/* Copyright */}
-        <div className="mt-4 text-center ">
+        <div className="mt-4 text-center text-sm sm:text-base">
           © All Rights Reserved 2024 AJT
         </div>
       </div>
