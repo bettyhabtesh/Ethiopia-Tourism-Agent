@@ -1,4 +1,5 @@
-import React from "react"; 
+import React from "react";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaWhatsapp, FaTelegram } from "react-icons/fa";
 import Logo from "../Assets/Logo.png";
 
@@ -11,9 +12,15 @@ const Footer = () => {
           
           {/* Column 1: Brand Info */}
           <div className="col-span-2 flex flex-col sm:flex-row items-start">
-            <img src={Logo} alt="ETA Logo" className="w-32 h-auto sm:w-48 sm:h-auto mb-4 sm:mb-0 sm:mr-8" />
+            <img
+              src={Logo}
+              alt="ETA Logo"
+              className="w-32 h-auto sm:w-48 sm:h-auto mb-4 sm:mb-0 sm:mr-8"
+            />
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-customBrown mb-4">Ethiopian Tourism Agent</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-customBrown mb-4">
+                Ethiopian Tourism Agent
+              </h2>
               <p className="text-lg sm:text-xl text-white">
                 Our Addis Ababa office, conveniently located in the Mexico Area, 
                 is open Monday to Saturday. <br />
@@ -26,10 +33,10 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Contents</h3>
             <ul className="space-y-2 text-lg sm:text-xl">
-              <li><a href="#" className="hover:underline">About Us</a></li>
-              <li><a href="#" className="hover:underline">About Ethiopia</a></li>
-              <li><a href="#" className="hover:underline">Gallery</a></li>
-              <li><a href="#" className="hover:underline">Blog</a></li>
+              <li><Link to="/about" className="hover:underline">About Us</Link></li>
+              <li><Link to="/ethiopia" className="hover:underline">About Ethiopia</Link></li>
+              <li><Link to="/gallery" className="hover:underline">Gallery</Link></li>
+              <li><Link to="/blog" className="hover:underline">Blog</Link></li>
             </ul>
           </div>
 
@@ -37,16 +44,36 @@ const Footer = () => {
           <div className="col-span-1">
             <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Social Media</h3>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-600">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 hover:text-pink-600"
+              >
                 <FaInstagram size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-600"
+              >
                 <FaFacebook size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-green-500 hover:text-green-600">
+              <a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-500 hover:text-green-600"
+              >
                 <FaWhatsapp size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500">
+              <a
+                href="https://t.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-500"
+              >
                 <FaTelegram size={24} />
               </a>
             </div>

@@ -11,11 +11,11 @@ const Navbar = ({ scrollToDestinations }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-customGray bg-opacity-60 backdrop-blur-md">
-      <div className="container mx-auto flex justify-between items-center py-3 px-6"> {/* Reduced py from 4 to 3 */}
+      <div className="container mx-auto flex justify-between items-center py-3 px-6">
         
         {/* Logo */}
         <div className="flex items-center">
-          <img src={Logo} alt="Ethiopia Travel Logo" className="h-12 md:h-16" /> {/* Reduced image height */}
+          <img src={Logo} alt="Ethiopia Travel Logo" className="h-12 md:h-16" />
         </div>
 
         {/* Hamburger icon (visible on small screens) */}
@@ -23,6 +23,7 @@ const Navbar = ({ scrollToDestinations }) => {
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-label="Toggle navigation menu"
           >
             <svg
               className="w-8 h-8"
@@ -41,31 +42,41 @@ const Navbar = ({ scrollToDestinations }) => {
           </button>
         </div>
 
-        {/* Navigation Links (hidden on small screens) */}
+        {/* Navigation Links */}
         <ul
           className={`${
             isOpen ? "block" : "hidden"
           } md:flex space-y-4 md:space-y-0 md:space-x-8 text-white text-lg md:text-xl absolute md:relative w-full md:w-auto bg-customGray md:bg-transparent left-0 md:flex-row flex-col md:items-center top-16 md:top-auto`}
         >
           <li className="text-center md:text-left">
-            <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
           </li>
           <li className="text-center md:text-left">
-            <Link to="/aboutus" onClick={() => setIsOpen(false)}>About Us</Link>
+            <Link to="/aboutus" onClick={() => setIsOpen(false)}>
+              About Us
+            </Link>
           </li>
           <li className="text-center md:text-left">
-            <a
+            {/* Use a button for non-navigating actions */}
+            <button
+              type="button"
               onClick={() => {
-                scrollToDestinations();
+                if (scrollToDestinations) {
+                  scrollToDestinations();
+                }
                 setIsOpen(false);
               }}
-              className="cursor-pointer"
+              className="cursor-pointer text-white hover:underline bg-transparent border-none"
             >
               Top Destinations
-            </a>
+            </button>
           </li>
           <li className="text-center md:text-left">
-            <a href="#" onClick={() => setIsOpen(false)}>Contact Us</a>
+            <Link to="/contact" onClick={() => setIsOpen(false)}>
+              Contact Us
+            </Link>
           </li>
         </ul>
       </div>
